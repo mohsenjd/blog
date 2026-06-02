@@ -1,0 +1,46 @@
+baseURL = "https://blog.coffeecoded.dev/"
+defaultContentLanguage = "en"
+title = "Coffee Coded"
+enableRobotsTXT = true
+
+[languages.en]
+  label = "English"
+  locale = "en_US"
+
+# Tag taxonomy only — no categories.
+# Tags are captured in front matter, but /tags/* pages are NOT generated yet.
+# Flip this on (remove "taxonomy" and "term") once tag vocabulary has density.
+disableKinds = ["taxonomy", "term"]
+[taxonomies]
+  tag = "tags"
+
+[params]
+  description = "Fintech engineer, passionate about payment technologies, scalable systems, and continuous learning. Writing about Spring, backend engineering, software design, and lessons from production environments."
+  author = "Coffee Coded"
+  github = "mohsenjd"          # update once known
+  email = "mohsen.mohammadi.se@gmail.com"       # update once known
+  cloudflareAnalyticsToken = ""   # set in production once provisioned
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+    noClasses = false  # emit CSS classes so colours are controlled by main.css
+    tabWidth = 2
+  [markup.goldmark.renderer]
+    unsafe = false     # no raw HTML in markdown — keeps surface tight
+
+[outputs]
+  home    = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+# /posts/{slug}/ — slug comes from front matter, not filename.
+[permalinks]
+  posts = "/posts/:slug/"
+
+# Show all posts on the homepage — switch to pagination only when post count makes scanning painful.
+[pagination]
+  pagerSize = 1000
+
+[minify]
+  disableXML = true

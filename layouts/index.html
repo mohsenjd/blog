@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="intro">
+  {{ .Content }}
+</section>
+
+<section class="post-list">
+  <ul>
+    {{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ else }}
+      <li class="post-list-empty">No posts yet.</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

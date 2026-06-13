@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <a href="{{ "/index.xml" | relURL }}">RSS</a>
+  {{ with .Site.Params.github }}· <a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
+  {{ with .Site.Params.email }}· <a href="mailto:{{ . }}">Email</a>{{ end }}
+</footer>
+
+{{ if hugo.IsProduction }}
+  {{ with .Site.Params.cloudflareAnalyticsToken }}
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
+  {{ end }}
+{{ end }}

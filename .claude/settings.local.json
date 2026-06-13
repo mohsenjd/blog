@@ -3,7 +3,10 @@
     "allow": [
       "Bash(hugo --gc)",
       "Bash(curl -s http://127.0.0.1:1313/index.xml)",
-      "Bash(hugo -D --templateMetrics)"
+      "Bash(hugo -D --templateMetrics)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

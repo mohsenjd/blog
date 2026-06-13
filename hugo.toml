@@ -36,7 +36,8 @@ disableKinds = ["taxonomy", "term"]
 
 # /posts/{slug}/ — slug comes from front matter, not filename.
 [permalinks]
-  posts = "/posts/:slug/"
+  tech = "/tech/:slug/"
+  language = "/language/:slug/"
 
 # Show all posts on the homepage — switch to pagination only when post count makes scanning painful.
 [pagination]
